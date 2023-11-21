@@ -1,0 +1,85 @@
+>> installing Kali linux in windows using chocolatey
+
+1. $$>>installing chocolatey >>
+
+#open powershell as administrator
+# Run Get-ExecutionPolicy.
+    If it returns "Restricted", 
+    then run Set-ExecutionPolicy AllSigned or Set-ExecutionPolicy Bypass -Scope Process.
+     hit Y
+    check for ExecutionPolicy again by "Get-ExecutionPolicy" and provides "allsigned".
+
+# run a command for downloading software 
+  Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+#type > choco 
+    for version checking 
+     Chocolatey v2.2.2
+
+2. $$ >> installing git >>
+
+# $ choco install git.install 
+  hit : y & y 
+# for upgrade >> $ choco upgrade git.install
+# for uninstall >> $ choco uninstall git.install 
+
+3. $$ >> installing virtual box >>
+
+# $ choco install virtualbox
+  hit : y & y & y & y 
+#for upgradeing $ choco upgrade virtualbox
+#for uninstall  $ choco uninstall virtualbox
+
+4. $$ >> setting 'windown configarations in windows feature on or of'
+
+# make sure that of the below one's
+ *v.m platform
+ *windows subsystem for linux
+ *hyper-v
+ *windows hyperwiser platform
+
+# restart the device if you changed the setting .
+
+5. $$ >> instilling vagrant >>
+ 
+# $ choco install vagrant
+# for upgrade >>choco upgrade vagrant
+# for uninstall >> choco uninstall vagrant
+
+re-start the device after installing vagrant
+
+6. $$ >> setting the kali folder in vagrant using git bash >>
+
+# >> open git bash
+# check present working directory > $ pwd
+  /c/user/admin
+# change directory to C drive > $ cd /c/ 
+# create folder with name vargent > $ mkdir vagrant 
+# change it to directory >$ cd vargent 
+# create folder with name of kalilinux > $ mkdir kalilinux
+# change the directory > $ cd kalilinux
+# check working dir > $ pwd 
+# enter the command for installing the kalilinux software
+  >>$ vagrant init kalilinux/rolling
+    vagrant file has been plased in directory and you are ready to 'vagrant up' then entrt 
+  
+  >>$ vagrant up 
+    its start downloading software in the folder , it takes time.
+
+>>>> ### NOW INSTALATION HAS DONE SUCESSFULLY ### <<<
+
+# >> for starting and running kalilinux always come to kalilinux directory and enter " vagrant up" for running kali O.S .
+# >> for stopping the os again enter below in git bash " vagrant halt" .
+
+
+
+
+
+
+
+
+
+
+
+
+
